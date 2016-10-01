@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network "forwarded_port", guest: 80, host: 8082
   config.vm.network "private_network", ip: "192.168.50.5"
-  config.vm.synced_folder ".", "/var/www/html", {:mount_options => ['dmode=777','fmode=777']}
+  config.vm.synced_folder ".", "/var/www/html", {:mount_options => ['dmode=644','fmode=755']}
   config.vm.provision :shell, :path => "bootstrap.sh"
 
 end
