@@ -12,7 +12,21 @@ echo "</br>";
 echo implode(',', $list);
 */
 
-$a = 1;
+/*$a = 1;
 $b = 2;
 $c = $a % $b;
 var_export($c);
+*/
+$array_depth = 30;
+for ($i=0; $i < $array_depth; $i++) {
+	for ($j=0; $j < $array_depth; $j++) { 
+		if ($i != $j) {
+			$matrix[$i][$j] = 0;
+		} else {
+			$matrix[$i][$j] = 1;
+		}
+	}
+}
+foreach ($matrix as $value) {
+	echo "<br>" . implode(' ', $value);
+}
