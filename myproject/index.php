@@ -17,9 +17,9 @@ $b = 2;
 $c = $a % $b;
 var_export($c);
 */
-$array_depth = 30;
-for ($i=0; $i < $array_depth; $i++) {
-	for ($j=0; $j < $array_depth; $j++) { 
+$array_dimension = 30;
+for ($i=0; $i < $array_dimension; $i++) {
+	for ($j=0; $j < $array_dimension; $j++) {
 		if ($i != $j) {
 			$matrix[$i][$j] = 0;
 		} else {
@@ -28,5 +28,11 @@ for ($i=0; $i < $array_depth; $i++) {
 	}
 }
 foreach ($matrix as $value) {
-	echo "<br>" . implode(' ', $value);
+	echo implode(' ', $value) . "<br>";
 }
+
+$test = 123321;
+$a=36;
+$b=7;
+$c=$a%$b;
+echo "$c";
