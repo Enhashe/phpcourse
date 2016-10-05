@@ -30,13 +30,13 @@ print('<br>Task_4<br><br>');
 $number_quantity = 3;
 $list = array();
 for ($i=0; $i < $number_quantity; $i++) { 
-	$number = rand(0,100);
+	$number1 = rand(0,100);
 	for ($j=0; $j < count($list); $j++) { 
-		while ($number == $list[$j]) {
-			$number = rand(0,100);
+		while ($number1 == $list[$j]) {
+			$number1 = rand(0,100);
 		}
 	}
-	$list[$i] = $number;
+	$list[] = $number1;
 }
 var_dump($list);
 
@@ -51,4 +51,16 @@ for ($i=$first; $i <= $last ; $i++) {
 }
 
 print('<br>Task_6<br><br>');
+$a = 100000;
+$b = 999999;
+$list_of_numbers = array();
+for ($i=$a; $i <= $b; $i++) { 
+	$number2 = "$i";
+	if ($number2{0} + $number2{1} + $number2{2} === $number2{3} + $number2{4} + $number2{5}) {
+		$list_of_numbers[] = $i;
+	}
+}
+echo implode(" " , $list_of_numbers) . "<br>";
+echo "Numbers quantity: " . count($list_of_numbers) . "<br>";
+echo "Percent of LUCKY tickets: " . count($list_of_numbers) / ($b - $a) * 100;
 ?>
