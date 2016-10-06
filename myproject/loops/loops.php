@@ -15,11 +15,12 @@ print ("Counter is: $i <br> Sum is: $sum<br>");
 
 print('<br>Task_3<br><br>');
 
-for ($i=1; $i <= 10000; $i++) {
+for ($i=0; $i <= 10000; $i++) {
 	if ($i % 5 != 0) {
 		for ($j = 0; $j < strlen($i); $j++) {
-			if (substr($i, $j, 1) == 3) {
-				echo "$i ";
+			$k = "$i";
+			if ($k{$j} == 3) {
+				echo "$k\t";
 			}
 		}
 	}
@@ -28,15 +29,14 @@ for ($i=1; $i <= 10000; $i++) {
 print('<br>Task_4<br><br>');
 
 $number_quantity = 3;
-$list = array();
-for ($i=0; $i < $number_quantity; $i++) { 
-	$number1 = rand(0,100);
-	for ($j=0; $j < count($list); $j++) { 
-		while ($number1 == $list[$j]) {
-			$number1 = rand(0,100);
+$list[] = rand(0,100);
+for ($i=1; $i < $number_quantity; $i++) { 
+	$list[$i] = rand(0,100);
+	for ($j=0; $j <= ($i- 1); $j++) { 
+		if ($list[$j] === $list[$i]) {
+			$i--;
 		}
 	}
-	$list[] = $number1;
 }
 var_dump($list);
 
@@ -46,21 +46,27 @@ $first = 35;
 $last = 87;
 for ($i=$first; $i <= $last ; $i++) { 
 	if ($i % 7 == 1 && 2 && 5) {
-		echo "$i<br>";
+		echo "$i\t";
 	}
 }
 
 print('<br>Task_6<br><br>');
-$a = 100000;
-$b = 999999;
-$list_of_numbers = array();
-for ($i=$a; $i <= $b; $i++) { 
-	$number2 = "$i";
-	if ($number2{0} + $number2{1} + $number2{2} === $number2{3} + $number2{4} + $number2{5}) {
-		$list_of_numbers[] = $i;
+
+$ticket_max = '999999';
+$ticket_lenght = strlen($ticket_max);
+$list_of_numbers = [];
+for ($i=0; $i <= $ticket_max; $i++) { 
+	$ticket_counter = NULL;
+	$zero_counter = $ticket_lenght - strlen($i);
+	for ($j=0; $j < $zero_counter; ++$j) { 
+		$ticket_counter .= 0;
+	}
+	$ticket_counter .= $i;
+	if ($ticket_counter[0] + $ticket_counter[1] + $ticket_counter[2] === $ticket_counter[3] + $ticket_counter[4] + $ticket_counter[5]) {
+		$list_of_numbers[] = $ticket_counter;
 	}
 }
-echo implode(" " , $list_of_numbers) . "<br>";
+echo implode("\t" , $list_of_numbers) . "<br>";
 echo "Numbers quantity: " . count($list_of_numbers) . "<br>";
-echo "Percent of LUCKY tickets: " . count($list_of_numbers) / ($b - $a) * 100;
+echo "Percent of LUCKY tickets: " . count($list_of_numbers) / $ticket_max * 100;
 ?>
