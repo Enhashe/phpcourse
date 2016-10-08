@@ -36,7 +36,7 @@ print("<br>Task_4<br><br>");
 
 $list4 = array('one','two','three','two','one','six','seven','three');
 $list4_is_unique = false;
-$list4_is_unique = (count($list4) == array_unique($list4)) ? true : false;
+$list4_is_unique = (count($list4) == count(array_unique($list4))) ? true : false;
 switch ($list4_is_unique) {
 	case true:
 		echo "All array elements is unique<br>";
@@ -76,6 +76,55 @@ var_dump($list5);
 
 print("<br>Task_6<br><br>");
 
-
+$list6 = [];
+$list6_counter = 10;
+for ($i = 0; $i < $list6_counter; $i++) { 
+	$list6[] = rand(0,100);
+}
+var_dump($list6);
+asort($list6);
+var_dump($list6);
+ksort($list6);
+for ($j = 0; $j < $list6_counter; $j++)	{
+	$min = $j;
+	for ($i = $j; $i < $list6_counter; $i++) { 
+		if ($list6[$i] < $list6[$min]) {
+			$min = $i;
+		}
+	}
+	$buffer = $list6[$j];
+	$list6[$j] = $list6[$min];
+	$list6[$min] = $buffer;
+}
+var_dump($list6);
 
 print("<br>Task_7<br><br>");
+
+$list7 = [];
+$list7_counter = 7;
+$flag = 1;
+/*for ($i = 0; $i < $list7_counter; $i++) { 
+	$list7[] = rand(0,100);
+}
+var_dump($list7);*/
+$list7 = array(1,2,3,4,5,6,1);
+for ($i = 0; $i < $list7_counter; $i++) { 
+	for ($j = 0; $j < ($list7_counter - 1); $j++) { 
+		if ($i == $j) {
+			continue;
+		}
+		if ($list7[$j] > $list7[($j + 1)]){
+			$flag = 0;
+			break;
+		}
+	}
+	if ($flag == 1) {
+		echo "Possible";
+		break;
+	} elseif ($flag == 0 && $i != ($list7_counter - 1)) {
+		$flag = 1;
+	}
+}
+if ($flag == 0) {
+	echo "Impossible";
+}
