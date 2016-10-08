@@ -28,7 +28,41 @@ shuffle($list2);
 var_dump($list2);
 print("<br>Task_3<br><br>");
 
-
+$list3_1 = array(0,2,4,6,8,10);
+$list3_2 = array(1,3,5,7,9,9);
+$list3_3 = array();
+$i = $j = $k = 0;
+$n1 = count($list3_1);
+$n2 = count($list3_2);
+var_dump($i);
+var_dump($j);
+var_dump($k);
+do{
+    while (($list3_1[$i] < $list3_2[$j]) && ($i < $n1)) {
+        $list3_3[$k++] = $list3_1[$i];
+        $i++;
+    }
+    while ($list3_1[$i] > $list3_2[$j] && ($j < $n2)) {
+        $list3_3[$k++] = $list3_2[$j];
+        $j++;
+    }
+    while ($list3_1[$i] == $list3_2[$j] && ($i < $n1) && ($j < $n2)) {
+        $list3_3[$k++] = $list3_1[$i++];
+        $list3_3[$k++] = $list3_2[$j++];
+    }
+    if ($i == $n1) {
+        while ($j < $n2){
+            $list3_3[$k++] = $list3_2[$j++];
+        }
+    }
+    if ($j == $n2) {
+        while ($i < $n1) {
+            $list3_3[$k++] = $list3_1[$i++];
+        }
+    }
+}
+while ($k<$n1+$n2);
+var_dump($list3_3);
 
 print("<br>Task_4<br><br>");
 
@@ -47,3 +81,4 @@ var_dump($list4);
 var_dump($new_list4);
 
 print("<br>Task_5<br><br>");
+
