@@ -22,7 +22,8 @@ $arraySize = 10;
 $minVal = 0;
 $maxVal = 100;
 $inputArray = genRandomArray($arraySize,$minVal,$maxVal);
-$standardSort = asort($inputArray);
+$standardSort = $inputArray;
+asort($standardSort);
 $result = sortArrayAscend($inputArray);
 
 ?>
@@ -43,11 +44,9 @@ $result = sortArrayAscend($inputArray);
 			<div class="task-item">
 				Output Data:<br>
 				<?php 
-
-					echo 'Original array: ' . implode(',' , $inputArray);
-					echo 'Standard Sort: ' . implode($standardSort);
-					echo 'Custom Sort: ' . implode(',' , $result);
-
+					echo 'Original array: ' . implode(',' , $inputArray) . '<br>';
+					echo 'Standard Sort: ' . implode(',' , $standardSort) . '<br>';
+					echo 'Custom Sort: ' . implode(',' , $result) . '<br>';
 				?>
 			</div>
 			<div class="task-item">

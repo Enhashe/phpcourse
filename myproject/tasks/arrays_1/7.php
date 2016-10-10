@@ -1,8 +1,31 @@
 <?php 
-function sayHelloWorld($count = 1) {
 
+function possibilityCheck($inputArray) {
+	$counter = count($inputArray);
+	$flag = true;
+	for ($i = 0; $i < $counter; $i++) { 
+		for ($j = 0; $j < ($counter - 1); $j++) { 
+			if ($i == $j) {
+				continue;
+			}
+			if ($inputArray[$j] > $inputArray[($j + 1)]){
+				$flag = false;
+				break;
+			}
+		}
+		if ($flag == true) {
+			break;
+		} elseif ($flag == false && $i != ($counter - 1)) {
+			$flag = true;
+		}
+	}
+
+	return $flag;
 }
-$result = sayHelloWorld(10); 
+
+$inputArray = array(1,2,3,4,1,6,7);
+$result = possibilityCheck($inputArray); 
+
 ?>
 
 <?php require '../../view/header.php'; ?>
@@ -20,7 +43,7 @@ $result = sayHelloWorld(10);
 			</div>
 			<div class="task-item">
 				Output Data:<br>
-				<?php echo $result ?>
+				<?php echo $result  ? 'true' : 'false'; ?>
 			</div>
 			<div class="task-item">
 				Code:<br>

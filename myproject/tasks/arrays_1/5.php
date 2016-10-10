@@ -20,8 +20,8 @@ function exchangeMinMax($inputArray) {
 }
 
 $arraySize = 5;
-$minVal = 0
-$maxVal = 100
+$minVal = 0;
+$maxVal = 100;
 $inputArray = genRandomArray($arraySize,$minVal,$maxVal);
 $result = exchangeMinMax($inputArray); 
 ?>

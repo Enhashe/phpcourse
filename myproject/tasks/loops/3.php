@@ -15,7 +15,8 @@ function numbersDividing5Contains3($counter = 1) {
 	return $result;
 }
 
-$result = numbersDividing5Contains3(10000); 
+$numberCount = 100000;
+$result = numbersDividing5Contains3($numberCount); 
 
 ?>
 

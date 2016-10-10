@@ -1,13 +1,17 @@
 <?php 
-function sayHelloWorld($counter = 1) {
+function naturalNumbers($first,$last) {
 	$result = '';
-	for ($i=0; $i < $counter; $i++) {
-		$result .= 'HelloWorld!<br>';
+	for ($i = $first; $i <= $last ; $i++) { 
+		if ($i % 7 == 1 && 2 && 5) {
+			$result .= "$i\t";
+		}
 	}
 	return $result;
 }
 
-$result = sayHelloWorld(10); 
+$first = 35;
+$last = 87;
+$result = naturalNumbers($first,$last); 
 
 ?>
 
@@ -26,7 +30,7 @@ $result = sayHelloWorld(10);
 			</div>
 			<div class="task-item">
 				Output Data:<br>
-				<?php echo $result ?>
+				<?php echo $result; ?>
 			</div>
 			<div class="task-item">
 				Code:<br>
