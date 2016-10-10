@@ -11,7 +11,12 @@ function genRandomArray($counter = 1,$min = 0, $max = 1) {
 	}
 	return $randArray;
 }
-$result = genRandomArray(3,0,100); 
+
+$arraySize = 3;
+$maxVal = 0;
+$minVal = 100;
+$result = genRandomArray($arraySize, $minVal, $maxVal); 
+
 ?>
 
 <?php require '../../view/header.php'; ?>

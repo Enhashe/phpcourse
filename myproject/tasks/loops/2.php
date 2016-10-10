@@ -6,7 +6,9 @@ function sumOfnumbers($counter = 1) {
 	}
 	return $sum;
 }
+
 $result = sumOfnumbers(112); 
+
 ?>
 
 <?php require '../../view/header.php'; ?>

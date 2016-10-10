@@ -1,12 +1,14 @@
 <?php 
 function sayHelloWorld($counter = 1) {
 	$result = '';
-	for ($i=0; $i < $counter; $i++) {
+	for ($i = 0; $i < $counter; $i++) {
 		$result .= 'HelloWorld!<br>';
 	}
 	return $result;
 }
+
 $result = sayHelloWorld(10); 
+
 ?>
 
 <?php require '../../view/header.php'; ?>

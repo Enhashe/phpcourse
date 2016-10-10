@@ -6,7 +6,9 @@ function sayHelloWorld($counter = 1) {
 	}
 	return $result;
 }
+
 $result = sayHelloWorld(10); 
+
 ?>
 
 <?php require '../../view/header.php'; ?>

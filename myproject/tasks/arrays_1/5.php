@@ -1,8 +1,29 @@
 <?php 
-function sayHelloWorld($count = 1) {
 
+require '../../lib/functions.php';
+
+function exchangeMinMax($inputArray) {
+	$counter = sizeof($inputArray);
+	$min = 0;
+	$max = 0;
+	for ($i = 0; $i < $counter; $i++) { 
+		if ($inputArray[$i] > $inputArray[$max]) {
+			$max = $i;
+		} elseif ($inputArray[$i] < $inputArray[$min]) {
+			$min = $i;
+		}
+	}
+	$buffer = $inputArray[$min];
+	$inputArray[$min] = $inputArray[$max];
+	$inputArray[$max] = $buffer;
+	return $inputArray;
 }
-$result = sayHelloWorld(10); 
+
+$arraySize = 5;
+$minVal = 0
+$maxVal = 100
+$inputArray = genRandomArray($arraySize,$minVal,$maxVal);
+$result = exchangeMinMax($inputArray); 
 ?>
 
 <?php require '../../view/header.php'; ?>
@@ -20,7 +41,12 @@ $result = sayHelloWorld(10);
 			</div>
 			<div class="task-item">
 				Output Data:<br>
-				<?php echo $result ?>
+				<?php
+
+					echo "Original random array:\t" . implode(',', $inputArray) . '<br>';
+					echo "Modified random array:\t" . implode(',', $result) . '<br>';
+
+				?>
 			</div>
 			<div class="task-item">
 				Code:<br>

@@ -1,8 +1,30 @@
 <?php 
-function sayHelloWorld($count = 1) {
 
+require '../../lib/functions.php';
+
+function sortArrayAscend($inputArray) {
+	$counter = sizeof($inputArray);
+	for ($j = 0; $j < $counter; $j++)	{
+		$min = $j;
+		for ($i = $j; $i < $counter; $i++) { 
+			if ($inputArray[$i] < $inputArray[$min]) {
+				$min = $i;
+			}
+		}
+		$buffer = $inputArray[$j];
+		$inputArray[$j] = $inputArray[$min];
+		$inputArray[$min] = $buffer;
+	}
+	return $inputArray;
 }
-$result = sayHelloWorld(10); 
+
+$arraySize = 10;
+$minVal = 0;
+$maxVal = 100;
+$inputArray = genRandomArray($arraySize,$minVal,$maxVal);
+$standardSort = asort($inputArray);
+$result = sortArrayAscend($inputArray);
+
 ?>
 
 <?php require '../../view/header.php'; ?>
@@ -20,7 +42,13 @@ $result = sayHelloWorld(10);
 			</div>
 			<div class="task-item">
 				Output Data:<br>
-				<?php echo $result ?>
+				<?php 
+
+					echo 'Original array: ' . implode(',' , $inputArray);
+					echo 'Standard Sort: ' . implode($standardSort);
+					echo 'Custom Sort: ' . implode(',' , $result);
+
+				?>
 			</div>
 			<div class="task-item">
 				Code:<br>

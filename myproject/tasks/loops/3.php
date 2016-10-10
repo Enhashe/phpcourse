@@ -14,7 +14,9 @@ function numbersDividing5Contains3($counter = 1) {
 	}
 	return $result;
 }
+
 $result = numbersDividing5Contains3(10000); 
+
 ?>
 
 <?php require '../../view/header.php'; ?>
