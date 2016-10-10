@@ -1,12 +1,20 @@
 <?php 
-function sayHelloWorld($counter = 1) {
+function numbersDividing5Contains3($counter = 1) {
 	$result = '';
-	for ($i=0; $i < $counter; $i++) {
-		$result .= 'HelloWorld!<br>';
+	for ($i = 0; $i <= $counter; $i++) {
+		if ($i % 5 != 0) {
+			for ($j = 0; $j < strlen($i); $j++) {
+				$i = "$i";
+				if ($i{$j} == 3) {
+					$result = $result . "$i\t";
+				}
+				$i = (int)$i;
+			}
+		}
 	}
 	return $result;
 }
-$result = sayHelloWorld(10); 
+$result = numbersDividing5Contains3(10000); 
 ?>
 
 <?php require '../../view/header.php'; ?>
@@ -24,7 +32,7 @@ $result = sayHelloWorld(10);
 			</div>
 			<div class="task-item">
 				Output Data:<br>
-				<?php echo $result ?>
+				<?php echo $result; ?> 
 			</div>
 			<div class="task-item">
 				Code:<br>

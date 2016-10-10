@@ -1,12 +1,13 @@
 <?php 
-function sayHelloWorld($counter = 1) {
-	$result = '';
-	for ($i=0; $i < $counter; $i++) {
-		$result .= 'HelloWorld!<br>';
+function arrayN2($counter = 1) {
+	$listN2 = NULL;
+	for ($i=0; $i < $counter; $i++) { 
+		$listN2[$i] = $i * $i;
 	}
-	return $result;
+	return $listN2;
 }
-$result = sayHelloWorld(10); 
+
+$result = arrayN2(10); 
 ?>
 
 <?php require '../../view/header.php'; ?>
@@ -24,7 +25,7 @@ $result = sayHelloWorld(10);
 			</div>
 			<div class="task-item">
 				Output Data:<br>
-				<?php echo $result ?>
+				<?php echo implode("\t", $result) ?>
 			</div>
 			<div class="task-item">
 				Code:<br>

@@ -1,10 +1,6 @@
 <?php 
-function sayHelloWorld($counter = 1) {
-	$result = '';
-	for ($i=0; $i < $counter; $i++) {
-		$result .= 'HelloWorld!<br>';
-	}
-	return $result;
+function sayHelloWorld($count = 1) {
+
 }
 $result = sayHelloWorld(10); 
 ?>

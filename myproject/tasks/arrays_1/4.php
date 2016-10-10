@@ -1,12 +1,14 @@
 <?php 
-function sayHelloWorld($counter = 1) {
-	$result = '';
-	for ($i=0; $i < $counter; $i++) {
-		$result .= 'HelloWorld!<br>';
-	}
-	return $result;
+
+function checkArrayItemsUnique($inputArray) {
+	$arrayIsUnique = false;
+	$arrayIsUnique = (count($inputArray) == count(array_unique($inputArray))) ? 'true' : 'false';
+	return $arrayIsUnique;
 }
-$result = sayHelloWorld(10); 
+
+$inputArray = array('one','two','three','two','one','six','seven','three');
+$result = checkArrayItemsUnique($inputArray); 
+
 ?>
 
 <?php require '../../view/header.php'; ?>
@@ -24,7 +26,9 @@ $result = sayHelloWorld(10);
 			</div>
 			<div class="task-item">
 				Output Data:<br>
-				<?php echo $result ?>
+				<?php 
+					echo "Array items is unique? " . $result;
+				?>
 			</div>
 			<div class="task-item">
 				Code:<br>

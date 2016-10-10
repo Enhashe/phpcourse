@@ -1,12 +1,17 @@
 <?php 
-function sayHelloWorld($counter = 1) {
-	$result = '';
-	for ($i=0; $i < $counter; $i++) {
-		$result .= 'HelloWorld!<br>';
+function genRandomArray($counter = 1,$min = 0, $max = 1) {
+	$randArray[] = rand($min,$max);
+	for ($i = 1; $i < $counter; $i++) { 
+		$randArray[$i] = rand($min,$max);
+		for ($j = 0; $j <= ($i - 1); $j++) { 
+			if ($randArray[$j] === $randArray[$i]) {
+				$i--;
+			}
+		}
 	}
-	return $result;
+	return $randArray;
 }
-$result = sayHelloWorld(10); 
+$result = genRandomArray(3,0,100); 
 ?>
 
 <?php require '../../view/header.php'; ?>
@@ -24,7 +29,7 @@ $result = sayHelloWorld(10);
 			</div>
 			<div class="task-item">
 				Output Data:<br>
-				<?php echo $result ?>
+				<?php var_dump($result); ?>
 			</div>
 			<div class="task-item">
 				Code:<br>
