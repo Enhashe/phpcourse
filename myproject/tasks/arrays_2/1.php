@@ -1,9 +1,9 @@
-<?php 
-function sayHelloWorld($count = 1) {
+<!-- <?php 
+/*function arrayDuplicateRemove($count = 1) {
 
-}
-$result = sayHelloWorld(10); 
-?>
+}*/
+
+?> -->
 
 <?php require '../../view/header.php'; ?>
 <div class="content">
@@ -20,7 +20,14 @@ $result = sayHelloWorld(10);
 			</div>
 			<div class="task-item">
 				Output Data:<br>
-				<?php echo $result ?>
+				<?php
+
+				$list1 = array(1,2,4,4,2,5);
+				echo 'Base array: ' . implode($list1) . '<br>';
+				$list1 = array_unique($list1);
+				echo 'Modified array: ' . implode($list1);
+
+				?>
 			</div>
 			<div class="task-item">
 				Code:<br>

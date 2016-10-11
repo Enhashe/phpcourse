@@ -1,8 +1,29 @@
 <?php 
-function sayHelloWorld($count = 1) {
 
+require '../../lib/functions.php';
+
+function arrayShuffle($inputArray) {
+	$counter = count($inputArray);
+	$outputArray = array_fill(0, $counter, null);
+	foreach ($inputArray as $key => $value) {
+		do {
+			$a = rand(0,($counter - 1));
+			if ($outputArray[$a] == null && $a != $key) {
+				$outputArray[$a] = $value;
+				break;
+			}
+		} while (true);
+	}
+	return $outputArray;
 }
-$result = sayHelloWorld(10); 
+
+$elementCount = 10;
+$minElement = 0;
+$maxElement = 100;
+$inputArray = genRandomArray($elementCount,$minElement,$maxElement);
+$standardShuffle = $inputArray;
+$result = arrayShuffle($inputArray);
+
 ?>
 
 <?php require '../../view/header.php'; ?>
@@ -20,7 +41,12 @@ $result = sayHelloWorld(10);
 			</div>
 			<div class="task-item">
 				Output Data:<br>
-				<?php echo $result ?>
+				<?php
+					echo 'Base array: ' . implode(',', $inputArray) . '<br>';
+					shuffle($standardShuffle);
+					echo 'Shuffled array: ' . implode(',', $standardShuffle) . '<br>';
+					echo 'Random shuffled array: ' . implode(',', $result) . '<br>';
+				?>
 			</div>
 			<div class="task-item">
 				Code:<br>
