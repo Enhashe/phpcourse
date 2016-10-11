@@ -1,19 +1,14 @@
 <?php 
-
-require '../../lib/functions.php';
-
-function arrayWithZero($inputArray) {
-	foreach ($inputArray as $key => $value) {
-		$result[] = $value;
-		if ($value < 0 ) {
-			$result[] = 0;
-		}
-	}
-	return $result;
+function speedCalc($distance, $time) {
+	$speed = array();
+	$speed[] = $distance / $time;
+	$speed[] = ($distance / $time) * 3.6;
+	return $speed;
 }
 
-$inputArray = genRandomArray(10, -50, 50);
-$outputArray = arrayWithZero($inputArray);
+$distance = 400;
+$time = 20;
+$result = speedCalc($distance, $time);
 
 ?>
 
@@ -32,7 +27,10 @@ $outputArray = arrayWithZero($inputArray);
 			</div>
 			<div class="task-item">
 				Output Data:<br>
-				<?php echo implode(',', $outputArray) ?>
+				<?php
+					echo $result[0] . ' m/sec' . '<br>';
+					echo $result[1] . ' km/h' . '<br>';
+				?>
 			</div>
 			<div class="task-item">
 				Code:<br>

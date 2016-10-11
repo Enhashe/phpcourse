@@ -1,34 +1,40 @@
 <?php 
 function mergeArrays($inputArray1, $inputArray2) {
-	$result = array();
+	$result 	= array();
+	$counter1 	= count($inputArray1);
+	$counter2 	= count($inputArray2);
+	$i = $j = $k = 0;
 	do{
-	    while (($inputArray1[$i] < $inputArray2[$j]) && ($i < $n1)) {
+	    while (($inputArray1[$i] < $inputArray2[$j]) && ($i < $counter1)) {
 	        $result[$k++] = $inputArray1[$i];
 	        $i++;
 	    }
-	    while ($inputArray1[$i] > $inputArray2[$j] && ($j < $n2)) {
+	    while (($j < $counter2) && ($inputArray1[$i] > $inputArray2[$j])) {
 	        $result[$k++] = $inputArray2[$j];
 	        $j++;
 	    }
-	    while ($inputArray1[$i] == $inputArray2[$j] && ($i < $n1) && ($j < $n2)) {
+	    while (($i < $counter1) && ($j < $counter2) && ($inputArray1[$i] == $inputArray2[$j])) {
 	        $result[$k++] = $inputArray1[$i++];
 	        $result[$k++] = $inputArray2[$j++];
 	    }
-	    if ($i == $n1) {
-	        while ($j < $n2){
+	    if ($i == $counter1) {
+	        while ($j < $counter2){
 	            $result[$k++] = $inputArray2[$j++];
 	        }
 	    }
-	    if ($j == $n2) {
-	        while ($i < $n1) {
+	    if ($j == $counter2) {
+	        while ($i < $counter1) {
 	            $result[$k++] = $inputArray1[$i++];
 	        }
 	    }
-	}
+	} while ($k<$counter1+$counter2);
 	return $result;
 }
 
-$result = sayHelloWorld(10); 
+$inputArray1 = array(0,2,4,6,8,10);
+$inputArray2 = array(1,3,5,7,9,9);
+$result = mergeArrays($inputArray1, $inputArray2);
+
 ?>
 
 <?php require '../../view/header.php'; ?>
@@ -46,7 +52,11 @@ $result = sayHelloWorld(10);
 			</div>
 			<div class="task-item">
 				Output Data:<br>
-				<?php echo $result ?>
+				<?php 
+					echo '1-st array: ' . implode(',', $inputArray1) . '<br>';
+					echo '2-nd array: ' . implode(',', $inputArray2) . '<br>';
+					echo 'Merged array: ' . implode(',', $result);
+				?>
 			</div>
 			<div class="task-item">
 				Code:<br>

@@ -1,19 +1,17 @@
 <?php 
-
-require '../../lib/functions.php';
-
-function arrayWithZero($inputArray) {
-	foreach ($inputArray as $key => $value) {
-		$result[] = $value;
-		if ($value < 0 ) {
-			$result[] = 0;
+function multiplicatedArray($inputArray, $mult) {
+	if ($mult < 0 ) {
+		return 0;
+	} else {
+		foreach ($inputArray as $key => $value) {
+			$inputArray[$key] = $value * $mult;
 		}
+		return $inputArray;
 	}
-	return $result;
 }
 
-$inputArray = genRandomArray(10, -50, 50);
-$outputArray = arrayWithZero($inputArray);
+$inputArray = array(2,3.45,1.15,6,8,10.2);
+$result = multiplicatedArray($inputArray, 2);
 
 ?>
 
@@ -32,7 +30,15 @@ $outputArray = arrayWithZero($inputArray);
 			</div>
 			<div class="task-item">
 				Output Data:<br>
-				<?php echo implode(',', $outputArray) ?>
+				<?php
+				echo implode(',', $inputArray) . '<br>';
+				if ($result == 0) {
+					echo "Wrong miltiplier";
+				} else {
+					echo implode(',', $result);
+				}
+
+				?>
 			</div>
 			<div class="task-item">
 				Code:<br>

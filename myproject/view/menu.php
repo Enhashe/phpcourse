@@ -69,5 +69,25 @@
                   <a href="/tasks/arrays_2/5.php" title="5">5</a>
                 </li>
               </ul>
+            <li>
+              <b>Functions</b>
+            </li>
+              <ul>
+                <li>
+                  <a href="/tasks/functions/1.php" title="1">1</a>
+                </li>
+                <li>
+                  <a href="/tasks/functions/2.php" title="2">2</a>
+                </li>
+                <li>
+                  <a href="/tasks/functions/3.php" title="3">3</a>
+                </li>
+                <li>
+                  <a href="/tasks/functions/4.php" title="4">4</a>
+                </li>
+                <li>
+                  <a href="/tasks/functions/5.php" title="5">5</a>
+                </li>
+              </ul>
 				</ul>
 			</div>

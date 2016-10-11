@@ -1,20 +1,16 @@
 <?php 
-
-require '../../lib/functions.php';
-
-function arrayWithZero($inputArray) {
-	foreach ($inputArray as $key => $value) {
-		$result[] = $value;
-		if ($value < 0 ) {
-			$result[] = 0;
-		}
+function factorial($counter = 1) {
+	if ($counter < 0) {
+		return 0;
+	} elseif ($counter == 0) {
+		return 1;
+	} else {
+	return ($counter * factorial($counter - 1));
 	}
-	return $result;
 }
 
-$inputArray = genRandomArray(10, -50, 50);
-$outputArray = arrayWithZero($inputArray);
-
+$result = factorial(4);
+ 
 ?>
 
 <?php require '../../view/header.php'; ?>
@@ -32,7 +28,7 @@ $outputArray = arrayWithZero($inputArray);
 			</div>
 			<div class="task-item">
 				Output Data:<br>
-				<?php echo implode(',', $outputArray) ?>
+				<?php echo $result; ?>
 			</div>
 			<div class="task-item">
 				Code:<br>
