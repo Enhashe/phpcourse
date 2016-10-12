@@ -10,10 +10,10 @@ function sayHelloWorld($counter = 1) {
 $result = sayHelloWorld(10); 
 
 ?>
-
-<?php require '../../view/header.php'; ?>
+<!-- 
+<?php //require '../../view/header.php'; ?>
 <div class="content">
-	<?php require '../../view/menu.php'; ?>
+	<?php //require '../../view/menu.php'; ?>
 		<div class="workarea">
 			<div><h1>Loops</h1></div>
 			<div class="task-item">
@@ -34,4 +34,5 @@ $result = sayHelloWorld(10);
 			</div>
 		</div>
 	</div>
-<?php require '../../view/footer.php'; ?>
+<?php //require '../../view/footer.php'; ?>
+ -->

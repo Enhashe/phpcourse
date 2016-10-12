@@ -2,10 +2,10 @@
 function fileToArray($file, $delimiter = '|', $keys) {
 	$arrayFromFile = file($file);
 	foreach ($arrayFromFile as $key => $value) {
-	$arrayFromFile[$key] = explode($delimiter, $value);
-	foreach ($arrayFromFile[$key] as $key2 => $value2) {
-		$arrayFromFile[$key][$keys[$key2]] = $value2;
-		unset($arrayFromFile[$key][$key2]);
+		$arrayFromFile[$key] = explode($delimiter, $value);
+		foreach ($arrayFromFile[$key] as $key2 => $value2) {
+			$arrayFromFile[$key][$keys[$key2]] = $value2;
+			unset($arrayFromFile[$key][$key2]);
 		}
 	}
 	return $arrayFromFile;
