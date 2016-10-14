@@ -12,9 +12,13 @@ function genRandomArray($counter = 1,$min = 0, $max = 1) {
 	return $randArray;
 }
 
+$taskDescription = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet elementum lorem. Nulla tincidunt sed erat at aliquet. ';
+$inputData = 'Donec nisi urna, dictum in porta sed, eleifend non purus.';
+
 $arraySize = 3;
 $maxVal = 0;
 $minVal = 100;
+
 $result = genRandomArray($arraySize, $minVal, $maxVal); 
 
 ?>

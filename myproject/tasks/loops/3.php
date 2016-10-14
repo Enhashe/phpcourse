@@ -15,7 +15,11 @@ function numbersDividing5Contains3($counter = 1) {
 	return $result;
 }
 
+$taskDescription = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet elementum lorem. Nulla tincidunt sed erat at aliquet. ';
+$inputData = 'Donec nisi urna, dictum in porta sed, eleifend non purus.';
+
 $numberCount = 100000;
+
 $result = numbersDividing5Contains3($numberCount); 
 
 ?>

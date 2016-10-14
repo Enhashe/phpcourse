@@ -7,6 +7,8 @@ function sayHelloWorld($counter = 1) {
 	return $result;
 }
 
+$description = 'some description';
+
 $result = sayHelloWorld(10); 
 
 ?>

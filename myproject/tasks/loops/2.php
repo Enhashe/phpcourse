@@ -7,6 +7,9 @@ function sumOfnumbers($counter = 1) {
 	return $sum;
 }
 
+
+$taskDescription = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet elementum lorem. Nulla tincidunt sed erat at aliquet. ';
+$inputData = 'Donec nisi urna, dictum in porta sed, eleifend non purus.';
 $result = sumOfnumbers(112); 
 
 ?>
