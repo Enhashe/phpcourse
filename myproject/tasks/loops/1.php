@@ -26,7 +26,7 @@ $result = sayHelloWorld(10);
 			</div>
 			<div class="task-item">
 				Output Data:<br>
-				<?php echo $result ?>
+				<?php //echo $result ?>
 			</div>
 			<div class="task-item">
 				Code:<br>

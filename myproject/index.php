@@ -1,28 +1,33 @@
 
 	
 <?php 
+	require 'lib/functions.php';
 	$path = '';
 	if (!empty($_GET['path'])) {
 		$path = $_GET['path'];
 	}
-	var_dump($path);
+	//var_dump($path);
 	$pathChunks = explode('-', $path);
-	var_dump($pathChunks);
+	//var_dump($pathChunks);
 	$taskStructure = array(
 			'loops' => array(
 				'title' => 'Loops',
-				'tasks' => array('1','2','3','4','5')
+				'tasks' => array('1','2','3','4','5','6')
 			),
 			'arrays_1' => array(
 				'title' => 'Arrays_1',
-				'tasks' => array('1','2','3','4','5')
+				'tasks' => array('1','2','3','4','5','6','7')
 			),
 			'arrays_2' => array(
 				'title' => 'Arrays_2',
+				'tasks' => array('1','2','3','4','5'),
+			),
+			'functions' => array(
+				'title' => 'Functions',
 				'tasks' => array('1','2','3','4','5')
 			)
 		);
-		var_dump($taskStructure);
+		//var_dump($taskStructure);
 	$section = $pathChunks[0];
 	$task = $pathChunks[1];
 	require __DIR__ . '/tasks/' . $section . '/' . $task . '.php';
@@ -38,15 +43,16 @@
 			</div>
 			<div class="task-item">
 				Task:<br>
-				...
+				<?php //echo $taskDescription; ?>
 			</div>
 			<div class="task-item">
 				Input Data:<br>
 				...
+				<?php //echo $; ?>
 			</div>
 			<div class="task-item">
 				Output Data:<br>
-				<?php echo $result; ?>
+				<?php //echo $result; ?>
 			</div>
 			<div class="task-item">
 				Code:<br>
