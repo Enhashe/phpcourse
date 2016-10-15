@@ -1,7 +1,4 @@
 <?php 
-
-require '../../lib/functions.php';
-
 function sortArrayAscend($inputArray) {
 	$counter = sizeof($inputArray);
 	for ($j = 0; $j < $counter; $j++)	{
@@ -18,41 +15,22 @@ function sortArrayAscend($inputArray) {
 	return $inputArray;
 }
 
+$taskDescription = 'Упорядочить значения массива по возрастанию. Реализовать двумя способами: с помощью стандартной функции и без.';
+$inputData = '$arraySize = 10;<br>$minVal = 0;<br>$maxVal = 100;';
+
 $arraySize = 10;
 $minVal = 0;
 $maxVal = 100;
 $inputArray = genRandomArray($arraySize,$minVal,$maxVal);
 $standardSort = $inputArray;
 asort($standardSort);
-$result = sortArrayAscend($inputArray);
-
+$customSortedArray = sortArrayAscend($inputArray);
+$outputOrigArray = implode(',' , $inputArray);
+$outputStandardSort = implode(',' , $standardSort);
+$outputCustomSort = implode(',' , $customSortedArray);
+$result = <<<EOD
+Original array: $outputOrigArray<br>
+Standard Sort: $outputStandardSort<br>
+Custom Sort: $outputCustomSort<br>
+EOD;
 ?>
-
-<?php require '../../view/header.php'; ?>
-<div class="content">
-	<?php require '../../view/menu.php'; ?>
-		<div class="workarea">
-			<div><h1>Loops</h1></div>
-			<div class="task-item">
-				Task:<br>
-				...
-			</div>
-			<div class="task-item">
-				Input Data:<br>
-				...
-			</div>
-			<div class="task-item">
-				Output Data:<br>
-				<?php 
-					echo 'Original array: ' . implode(',' , $inputArray) . '<br>';
-					echo 'Standard Sort: ' . implode(',' , $standardSort) . '<br>';
-					echo 'Custom Sort: ' . implode(',' , $result) . '<br>';
-				?>
-			</div>
-			<div class="task-item">
-				Code:<br>
-				...
-			</div>
-		</div>
-	</div>
-<?php require '../../view/footer.php'; ?>

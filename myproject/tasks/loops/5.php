@@ -9,33 +9,11 @@ function naturalNumbers($first,$last) {
 	return $result;
 }
 
+$taskDescription = 'Даны натуральные числа от 35 до 87. Вывести на консоль те из них, которые при делении на 7 дают остаток 1, 2 или 5.';
+$inputData = '$first = 35;<br>$last = 87;';
+
 $first = 35;
 $last = 87;
 $result = naturalNumbers($first,$last); 
 
 ?>
-
-<?php require '../../view/header.php'; ?>
-<div class="content">
-	<?php require '../../view/menu.php'; ?>
-		<div class="workarea">
-			<div><h1>Loops</h1></div>
-			<div class="task-item">
-				Task:<br>
-				...
-			</div>
-			<div class="task-item">
-				Input Data:<br>
-				...
-			</div>
-			<div class="task-item">
-				Output Data:<br>
-				<?php echo $result; ?>
-			</div>
-			<div class="task-item">
-				Code:<br>
-				...
-			</div>
-		</div>
-	</div>
-<?php require '../../view/footer.php'; ?>

@@ -1,7 +1,4 @@
 <?php 
-
-require '../../lib/functions.php';
-
 function exchangeMinMax($inputArray) {
 	$counter = sizeof($inputArray);
 	$min = 0;
@@ -19,39 +16,18 @@ function exchangeMinMax($inputArray) {
 	return $inputArray;
 }
 
+$taskDescription = 'Поменять местами наибольший и наименьший элементы массива.';
+$inputData = '$arraySize = 5;<br>$minVal = 0;<br>$maxVal = 100;';
+
 $arraySize = 5;
 $minVal = 0;
 $maxVal = 100;
 $inputArray = genRandomArray($arraySize,$minVal,$maxVal);
-$result = exchangeMinMax($inputArray); 
+$exchangedArray = exchangeMinMax($inputArray);
+$outputOriginalArray = implode(',', $inputArray);
+$outputExchangedlArray = implode(',', $exchangedArray);
+$result = <<<EOD
+Original random array: $outputOriginalArray<br>
+Modified random array: $outputExchangedlArray<br>
+EOD;
 ?>
-
-<?php require '../../view/header.php'; ?>
-<div class="content">
-	<?php require '../../view/menu.php'; ?>
-		<div class="workarea">
-			<div><h1>Loops</h1></div>
-			<div class="task-item">
-				Task:<br>
-				...
-			</div>
-			<div class="task-item">
-				Input Data:<br>
-				...
-			</div>
-			<div class="task-item">
-				Output Data:<br>
-				<?php
-
-					echo "Original random array:\t" . implode(',', $inputArray) . '<br>';
-					echo "Modified random array:\t" . implode(',', $result) . '<br>';
-
-				?>
-			</div>
-			<div class="task-item">
-				Code:<br>
-				...
-			</div>
-		</div>
-	</div>
-<?php require '../../view/footer.php'; ?>

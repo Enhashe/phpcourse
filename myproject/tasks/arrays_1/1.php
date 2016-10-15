@@ -6,30 +6,10 @@ function arrayOf01($counter = 1) {
 	}
 	return $listOf01;
 }
-$result = arrayOf01(30); 
-?>
 
-<?php require '../../view/header.php'; ?>
-<div class="content">
-	<?php require '../../view/menu.php'; ?>
-		<div class="workarea">
-			<div><h1>Loops</h1></div>
-			<div class="task-item">
-				Task:<br>
-				...
-			</div>
-			<div class="task-item">
-				Input Data:<br>
-				...
-			</div>
-			<div class="task-item">
-				Output Data:<br>
-				<?php echo implode("\t" , $result) ?>
-			</div>
-			<div class="task-item">
-				Code:<br>
-				...
-			</div>
-		</div>
-	</div>
-<?php require '../../view/footer.php'; ?>
+$taskDescription = 'Заполнить массив длины n нулями и единицами, при этом данные значения чередуются, начиная с нуля.';
+$inputData = '$arraySize = 30;';
+
+$arraySize = 30;
+$result = implode(',', arrayOf01($arraySize));
+?>

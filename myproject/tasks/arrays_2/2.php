@@ -1,7 +1,4 @@
 <?php 
-
-//require '../../lib/functions.php';
-
 function arrayShuffle($inputArray) {
 	$counter = count($inputArray);
 	$outputArray = array_fill(0, $counter, null);
@@ -17,45 +14,25 @@ function arrayShuffle($inputArray) {
 	return $outputArray;
 }
 
+$taskDescription = 'Дан массив из n элементов. а) Переставьте его элементы случайным образом. б) Переставьте его элементы случайным образом так, чтобы каждый элемент оказался на новом месте.';
+$inputData = '$elementCount = 10;<br>$minVal = 0;<br>$maxVal = 100;<br>$inputArray = genRandomArray($elementCount,$minVal,$maxVal)';
+
 $elementCount = 10;
-$minElement = 0;
-$maxElement = 100;
-$inputArray = genRandomArray($elementCount,$minElement,$maxElement);
+$minVal = 0;
+$maxVal = 100;
+$inputArray = genRandomArray($elementCount,$minVal,$maxVal);
+
 $standardShuffle = $inputArray;
+shuffle($standardShuffle);
+$baseArray = implode(',', $inputArray);
+$shuffledArray = implode(',', $standardShuffle);
+$randomShuffledArray = implode(',', arrayShuffle($inputArray));
 
 $result = <<<EOT
-'Base array: ' . implode(',', $inputArray)
+Base array: $baseArray<br>
+Shuffled array: $shuffledArray<br>
+Random shuffled array: $randomShuffledArray
 EOT;
 
 
 ?>
-
-<!-- <?php //require '../../view/header.php'; ?>
-<div class="content">
-	<?php //require '../../view/menu.php'; ?>
-		<div class="workarea">
-			<div><h1>Loops</h1></div>
-			<div class="task-item">
-				Task:<br>
-				...
-			</div>
-			<div class="task-item">
-				Input Data:<br>
-				...
-			</div>
-			<div class="task-item">
-				Output Data:<br> -->
-				<?php
-					echo 'Base array: ' . implode(',', $inputArray) . '<br>';
-					shuffle($standardShuffle);
-					echo 'Shuffled array: ' . implode(',', $standardShuffle) . '<br>';
-					echo 'Random shuffled array: ' . implode(',', arrayShuffle($inputArray)) . '<br>';
-				?>
-<!-- 			</div>
-			<div class="task-item">
-				Code:<br>
-				...
-			</div>
-		</div>
-	</div>
-<?php //require '../../view/footer.php'; ?> -->

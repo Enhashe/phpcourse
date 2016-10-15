@@ -1,10 +1,11 @@
 
-	
 <?php 
 	$path = '';
 	$isMainPage = false;
 	if (!empty($_GET['path'])) {
+		
 		require 'lib/functions.php';
+		
 		$isMainPage = true;
 		$path = $_GET['path'];
 		$pathChunks = explode('-', $path);
@@ -26,13 +27,16 @@
 					'tasks' => array('1','2','3','4','5')
 				)
 			);
+
 		$section = $pathChunks[0];
 		$task = $pathChunks[1];
 		$sectionData = $taskStructure[$section];
 		$titleSection = $sectionData['title'];
 		$titleTask = $sectionData['tasks'][$task - 1];
 		$pageTitle = array($titleSection, $titleTask);
+
 		require __DIR__ . '/tasks/' . $section . '/' . $task . '.php';
+		
 	} else {
 		$isMainPage = false;
 	}

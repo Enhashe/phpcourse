@@ -1,7 +1,4 @@
-<?php 
-
-require '../../lib/functions.php';
-
+<?php
 function arrayWithZero($inputArray) {
 	foreach ($inputArray as $key => $value) {
 		$result[] = $value;
@@ -12,32 +9,14 @@ function arrayWithZero($inputArray) {
 	return $result;
 }
 
-$inputArray = genRandomArray(10, -50, 50);
+$taskDescription = 'Дан массив размера n. После каждого отрицательного элемента массива вставить элемент с нулевым значением.';
+$inputData = '$counter = 10;<br>$minVal = -50;<br>$maxVal = 50;<br>$inputArray = genRandomArray($counter, $minVal, $maxVal);';
+
+$counter = 10;
+$minVal = -50;
+$maxVal = 50;
+$inputArray = genRandomArray($counter, $minVal, $maxVal);
+
 $outputArray = arrayWithZero($inputArray);
-
+$result = implode(',', $outputArray);
 ?>
-
-<?php require '../../view/header.php'; ?>
-<div class="content">
-	<?php require '../../view/menu.php'; ?>
-		<div class="workarea">
-			<div><h1>Loops</h1></div>
-			<div class="task-item">
-				Task:<br>
-				...
-			</div>
-			<div class="task-item">
-				Input Data:<br>
-				...
-			</div>
-			<div class="task-item">
-				Output Data:<br>
-				<?php echo implode(',', $outputArray) ?>
-			</div>
-			<div class="task-item">
-				Code:<br>
-				...
-			</div>
-		</div>
-	</div>
-<?php require '../../view/footer.php'; ?>

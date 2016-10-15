@@ -16,35 +16,16 @@ function happyTicket($counter = 1) {
 		}
 	return $result;
 }
+
+$taskDescription = 'Вывести на экран все шестизначные счастливые билеты. Билет называется счастливым, если сумма первых трех цифр в номере билета равна сумме последних трех цифр. Найдите количество счастливых билетов и процент от общего числа билетов.';
+$inputData = '$counter = 999999;';
+
 $counter = 999999;
-$result = happyTicket($counter);
+$numberQuantity = "Numbers quantity: " . count(happyTicket($counter));
+$outputArray = implode(' ', happyTicket($counter));
+$result = <<<EOD
+$numberQuantity<br>
+$outputArray
+EOD;
 
 ?>
-
-<?php require '../../view/header.php'; ?>
-<div class="content">
-	<?php require '../../view/menu.php'; ?>
-		<div class="workarea">
-			<div><h1>Loops</h1></div>
-			<div class="task-item">
-				Task:<br>
-				...
-			</div>
-			<div class="task-item">
-				Input Data:<br>
-				...
-			</div>
-			<div class="task-item">
-				Output Data:<br>
-				<?php 
-					echo "Numbers quantity: " . count($result) . "<br>";
-					echo implode("\t" , $result) 
-				?>
-			</div>
-			<div class="task-item">
-				Code:<br>
-				...
-			</div>
-		</div>
-	</div>
-<?php require '../../view/footer.php'; ?>

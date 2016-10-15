@@ -6,36 +6,16 @@ function speedCalc($distance, $time) {
 	return $speed;
 }
 
+$taskDescription = 'Рассчитать скорость движения машины и вывести её в удобочитаемом виде. Осуществить возможность вывода в км/ч, м/c.<br>Исходные данные: Пройденный путь - S; Время движения - t.';
+$inputData = '$distance = 400;<br>$time = 20;';
+
 $distance = 400;
 $time = 20;
-$result = speedCalc($distance, $time);
+
+$speed = speedCalc($distance, $time);
+$result = <<<EOD
+$speed[0] m/sec<br>
+$speed[1] km/h
+EOD;
 
 ?>
-
-<?php require '../../view/header.php'; ?>
-<div class="content">
-	<?php require '../../view/menu.php'; ?>
-		<div class="workarea">
-			<div><h1>Loops</h1></div>
-			<div class="task-item">
-				Task:<br>
-				...
-			</div>
-			<div class="task-item">
-				Input Data:<br>
-				...
-			</div>
-			<div class="task-item">
-				Output Data:<br>
-				<?php
-					echo $result[0] . ' m/sec' . '<br>';
-					echo $result[1] . ' km/h' . '<br>';
-				?>
-			</div>
-			<div class="task-item">
-				Code:<br>
-				...
-			</div>
-		</div>
-	</div>
-<?php require '../../view/footer.php'; ?>

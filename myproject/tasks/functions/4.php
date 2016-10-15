@@ -26,59 +26,68 @@ function bookState($inputArray, $state) {
 function printBookList($inputArray) {
 	$outArray = array();
 	$listCounter = 1;
+	$result = '';
 	foreach ($inputArray as $key => $value) {
-		echo "$listCounter. ";
+		$result .= "$listCounter.";
 		foreach ($inputArray[$key] as $key2 => $value2) {
 			if ($key2 == 'author' || ($key2 == 'title')) {
-				echo $value2 . '. ';
+				$result .= " $value2.";
 			}
 		}
 		$listCounter++;
-		echo '<br>';
+		$result .= "<br>";
 	}
-	return true;
+	return $result;
 }
 
-$file = "../../files/input/functions_task_5_input.txt";
+function var_dump_ret($mixed = null) {
+  ob_start();
+  var_dump($mixed);
+  $content = ob_get_contents();
+  ob_end_clean();
+  return $content;
+}
+
+$taskDescription = <<<EOD
+Имеется файл с содержимым (книга|автор|издательство|состояние) например:<br>
+PHP 5 объектно-ориентированное программирование|Шишов Алексей|БХВ|1<br>
+MySQL: неподъемная книга разработчика|Шишов Алексей|БХВ|0<br>
+Справочник всего Г в России|Пупкин Вася|Пупкин и к0|1<br>
+Книга для домохозяек|Хозяйка Лидия|Домхоз|1<br>
+Телевидение в каждой коморке|Телестанция СССР|КВС+|0<br>
+Нужно написать 3 функции.<br>
+1) Функция, считывающая из файла построчно данные и разбила их на многомерный массив вида:<br>
+array(<br>
+ array(title => [книга], author => [автор], print => [издательство], status => [состояние]),<br>
+ array(title => [книга], author => [автор], print => [издательство], status => [состояние]),<br>
+ array(title => [книга], author => [автор], print => [издательство], status => [состояние]),<br>
+);<br>
+Выходные данные: массив книг.<br>
+2) Функция, обрабатывающая массив книг и возвращающая книги с запрошенным состоянием. Поле состояния отвечает за публикацию, опубликована книга или нет.<br>
+3) Функция, выводящая список книг в удобочитаемой форме.
+EOD;
+$inputData = <<<'EOD'
+$file = "../../files/input/functions_task_5_input.txt";<br>
+$delimiter = '|';<br>
+$keys = array("title","author","print","status");<br>
+$status = 0;
+EOD;
+
+$file = "files/input/functions_task_5_input.txt";
 $delimiter = '|';
 $keys = array("title","author","print","status");
 $status = 0;
 
-$result1 = fileToArray($file, $delimiter, $keys);
-$result2 = bookState($result1,$status);
+$arrayOfBooks = fileToArray($file, $delimiter, $keys);
+$arrayOfBookStates = 
 
+$outputFunc1 = var_dump_ret($arrayOfBooks);
+$outputFunc2 = var_dump_ret(bookState($arrayOfBooks,$status));
+$outputFunc3 = printBookList($arrayOfBooks);
 
+$result = <<<EOD
+$outputFunc1<br>
+$outputFunc2<br>
+$outputFunc3
+EOD;
 ?>
-
-<?php require '../../view/header.php'; ?>
-<div class="content">
-	<?php require '../../view/menu.php'; ?>
-		<div class="workarea">
-			<div><h1>Loops</h1></div>
-			<div class="task-item">
-				Task:<br>
-				...
-			</div>
-			<div class="task-item">
-				Input Data:<br>
-				...
-			</div>
-			<div class="task-item">
-				Output Data:<br>
-				<?php 
-					echo '<b>Task4.1</b><br>';
-					var_dump($result1);
-					echo '<b>Task4.2</b><br>';
-					var_dump($result2);
-					echo '<b>Task4.3</b><br>';
-					printBookList($result1);
-
-				?>
-			</div>
-			<div class="task-item">
-				Code:<br>
-				...
-			</div>
-		</div>
-	</div>
-<?php require '../../view/footer.php'; ?>

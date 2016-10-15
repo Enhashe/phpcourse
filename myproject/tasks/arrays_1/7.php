@@ -23,32 +23,11 @@ function possibilityCheck($inputArray) {
 	return $flag;
 }
 
+$taskDescription = 'Определите, можно ли вычеркнуть из данного массива одно число так, чтобы оставшиеся числа оказались упорядоченными по возрастанию.';
+$inputData = '$inputArray = array(1,2,3,4,1,6,7);';
+
 $inputArray = array(1,2,3,4,1,6,7);
-$result = possibilityCheck($inputArray); 
+$check = possibilityCheck($inputArray);
+$result = $check  ? 'true' : 'false'; 
 
 ?>
-
-<?php require '../../view/header.php'; ?>
-<div class="content">
-	<?php require '../../view/menu.php'; ?>
-		<div class="workarea">
-			<div><h1>Loops</h1></div>
-			<div class="task-item">
-				Task:<br>
-				...
-			</div>
-			<div class="task-item">
-				Input Data:<br>
-				...
-			</div>
-			<div class="task-item">
-				Output Data:<br>
-				<?php echo $result  ? 'true' : 'false'; ?>
-			</div>
-			<div class="task-item">
-				Code:<br>
-				...
-			</div>
-		</div>
-	</div>
-<?php require '../../view/footer.php'; ?>
