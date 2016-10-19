@@ -5,7 +5,6 @@
 	$pageCode = 'index';
 	$pageParameters = [];
 	$urlChunks = [];
-	//$path = $_GET['path'];
 	if (!empty($_GET['path'])) {
 		$urlChunks = explode('/', $_GET['path']);
 		if (!empty($urlChunks[0])) {
@@ -32,44 +31,6 @@
 	
 			break;
 	}
-	/*if (!empty($_GET['path'])) {
-		
-		require 'lib/functions.php';
-		
-		$isMainPage = true;
-		$path = $_GET['path'];
-		$sectionChunks = explode('-', $path);
-		$taskStructure = array(
-				'loops' => array(
-					'title' => 'Loops',
-					'tasks' => array('1','2','3','4','5','6')
-				),
-				'arrays_1' => array(
-					'title' => 'Arrays_1',
-					'tasks' => array('1','2','3','4','5','6','7')
-				),
-				'arrays_2' => array(
-					'title' => 'Arrays_2',
-					'tasks' => array('1','2','3','4','5'),
-				),
-				'functions' => array(
-					'title' => 'Functions',
-					'tasks' => array('1','2','3','4','5')
-				)
-			);
-
-		$section = $sectionChunks[0];
-		$task = $sectionChunks[1];
-		$sectionData = $taskStructure[$section];
-		$titleSection = $sectionData['title'];
-		$titleTask = $sectionData['tasks'][$task - 1];
-		$pageTitle = array($titleSection, $titleTask);
-
-		require __DIR__ . '/' . $section . '/' . $task . '.php';
-		
-	} else {
-		$isMainPage = false;
-	}*/
 ?>
 <?php require 'view/header.php'; ?>
 <div class="content">
@@ -79,6 +40,3 @@
 		</div>
 	</div>
 <?php require 'view/footer.php'; ?>
-
-
-

@@ -36,5 +36,3 @@ $result = <<<EOD
 	Built'in multiplication of array items : $standardMult<br>
 	Custom multiplication of array items: $multResult<br>
 EOD;
-
-?>

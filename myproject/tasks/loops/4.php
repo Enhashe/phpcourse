@@ -7,5 +7,3 @@ $minVal = 0;
 $maxVal = 100;
 
 $result = implode(',', genRandomArray($arraySize, $minVal, $maxVal)); 
-
-?>

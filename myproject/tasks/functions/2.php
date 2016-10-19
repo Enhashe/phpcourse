@@ -14,5 +14,3 @@ $inputData = '$counter = 4;';
 
 $counter = 4;
 $result = factorial($counter);
- 
-?>

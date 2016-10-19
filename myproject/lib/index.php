@@ -45,4 +45,3 @@ function getTask($section, $taskNumber){
 		'result' => $result
 	];
 }
-?>

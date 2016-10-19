@@ -1,31 +1,18 @@
 <?php
-function getMonthArray(){
-	$month = [
-		'1' => 'Январь',
-		'2' => 'Февраль',
-		'3' => 'Март',
-		'4' => 'Апрель',
-		'5' => 'Май',
-		'6' => 'Июнь',
-		'7' => 'Июль',
-		'8' => 'Август',
-		'9' => 'Сентябрь',
-		'10' => 'Октябрь',
-		'11' => 'Ноябрь',
-		'12' => 'Декабрь',
-	];
-	return $month;
+function getTimeStamp($date){
+	list($year, $month, $day) = explode('-', $date);
+	$timestamp = mktime(0, 0, 0, $month, $day, $year);
+	return $timestamp;
 }
 
-function getMonth($date){
-	$month = getMonthArray();
-	$result = $month[date('n',strtotime($date))];
+function getMonth($timestamp){
+	$result = date('F', $timestamp);
 	return $result;
 }
 
-$taskDescription = 'Создайте массив месяцев $month. Выведите на экран название текущего месяца с помощью массива $month и функции date.';
-$inputData = '$today = date(\'d.m.Y\', time());';
+$taskDescription = 'Сделайте форму, которая спрашивает дату в формате \'2025-12-31\'. С помощью функций mktime и explode переведите эту дату в формат timestamp. Узнайте месяц (словом) за введенную дату.';
+$inputData = '$date = \'2025-12-31\';';
 
-$today = date('d.m.Y', time());
+$date = '2025-12-31';
 
-$result = getMonth($today);
+$result = getMonth(getTimeStamp($date));

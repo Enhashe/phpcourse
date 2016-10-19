@@ -24,5 +24,3 @@ $containsNumber = 3;
 $numberCount = 10000;
 
 $result = numbersDividing5Contains3($divisionNumber, $containsNumber, $numberCount); 
-
-?>

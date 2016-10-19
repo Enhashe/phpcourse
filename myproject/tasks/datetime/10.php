@@ -19,7 +19,7 @@ function getMonthArray(){
 
 function getMonth($date){
 	$month = getMonthArray();
-	$result = $month[date('n',strtotime($date))];
+	$result = $month[date('n', strtotime($date))];
 	return $result;
 }
 

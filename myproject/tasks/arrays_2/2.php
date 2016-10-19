@@ -33,6 +33,3 @@ Base array: $baseArray<br>
 Shuffled array: $shuffledArray<br>
 Random shuffled array: $randomShuffledArray
 EOT;
-
-
-?>

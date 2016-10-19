@@ -33,4 +33,3 @@ Original array: $outputOrigArray<br>
 Standard Sort: $outputStandardSort<br>
 Custom Sort: $outputCustomSort<br>
 EOD;
-?>

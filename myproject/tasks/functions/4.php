@@ -90,4 +90,3 @@ $outputFunc1<br>
 $outputFunc2<br>
 $outputFunc3
 EOD;
-?>

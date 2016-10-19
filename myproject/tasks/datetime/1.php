@@ -1,7 +1,6 @@
 <?php
 function getClockTimestamp($timezone){
-	$result = time() + $timezone * 3600;
-	return $result;
+	return time() + $timezone * 3600;
 }
 
 $taskDescription = 'Выведите текущее время в формате timestamp';

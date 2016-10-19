@@ -28,6 +28,4 @@ $inputData = '$inputArray = array(1,2,3,4,1,6,7);';
 
 $inputArray = array(1,2,3,4,1,6,7);
 $check = possibilityCheck($inputArray);
-$result = $check  ? 'true' : 'false'; 
-
-?>
+$result = $check  ? 'true' : 'false';

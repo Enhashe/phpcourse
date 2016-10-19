@@ -12,4 +12,3 @@ $inputData = '$arraySize = 30;';
 
 $arraySize = 30;
 $result = implode(',', arrayOf01($arraySize));
-?>

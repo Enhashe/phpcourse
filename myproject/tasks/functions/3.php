@@ -22,5 +22,3 @@ $inputArray = array(2,3.45,1.15,6,8,10.2);
 $multiplier = -2;
 
 $result = multiplicatedArray($inputArray, $multiplier);
-
-?>

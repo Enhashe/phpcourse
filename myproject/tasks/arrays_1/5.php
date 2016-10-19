@@ -30,4 +30,3 @@ $result = <<<EOD
 Original random array: $outputOriginalArray<br>
 Modified random array: $outputExchangedlArray<br>
 EOD;
-?>

@@ -19,4 +19,3 @@ $inputArray = genRandomArray($counter, $minVal, $maxVal);
 
 $outputArray = arrayWithZero($inputArray);
 $result = implode(',', $outputArray);
-?>

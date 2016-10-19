@@ -17,5 +17,3 @@ $result = <<<EOD
 $speed[0] m/sec<br>
 $speed[1] km/h
 EOD;
-
-?>

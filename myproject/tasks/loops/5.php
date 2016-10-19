@@ -15,5 +15,3 @@ $inputData = '$first = 35;<br>$last = 87;';
 $first = 35;
 $last = 87;
 $result = naturalNumbers($first,$last); 
-
-?>

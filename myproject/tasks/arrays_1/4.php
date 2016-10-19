@@ -13,4 +13,3 @@ $inputData = '$inputArray = array(\'one\',\'two\',\'three\',\'two\',\'one\',\'si
 $inputArray = array('one','two','three','two','one','six','seven','three');
 $checkArray = checkArrayItemsUnique($inputArray); 
 $result = 'Array items is unique? '  . $checkArray;
-?>

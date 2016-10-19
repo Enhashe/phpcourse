@@ -12,5 +12,3 @@ $inputData = '$counter = 10';
 
 $counter = 10;
 $result = sayHelloWorld($counter);
-
-?>

@@ -27,5 +27,3 @@ $result = <<<EOD
 $numberQuantity<br>
 $outputArray
 EOD;
-
-?>

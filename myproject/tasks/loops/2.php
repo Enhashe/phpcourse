@@ -13,5 +13,3 @@ $inputData = '$maxCounter = 112';
 
 $maxCounter = 112;
 $result = sumOfnumbers($maxCounter);
-
-?>
