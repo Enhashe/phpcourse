@@ -1,5 +1,5 @@
 <?php 
-function happyTicket($counter = 1) {
+function luckyTicket($counter = 1) {
 		$ticketMax = "$counter";
 		$ticketLenght = strlen($ticketMax);
 		$result = [];
@@ -21,9 +21,12 @@ $taskDescription = 'Вывести на экран все шестизначны
 $inputData = '$counter = 999999;';
 
 $counter = 999999;
-$numberQuantity = "Numbers quantity: " . count(happyTicket($counter));
-$outputArray = implode(' ', happyTicket($counter));
+$luckyArray = luckyTicket($counter);
+$numberQuantity = count($luckyArray);
+$outputArray = implode(' ', $luckyArray);
+$luckyPercent = ($numberQuantity * 100) / $counter;
 $result = <<<EOD
-$numberQuantity<br>
+Numbers quantity: $numberQuantity<br>
+Lucky tickets percent: $luckyPercent<br>
 $outputArray
 EOD;
