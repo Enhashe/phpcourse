@@ -6,8 +6,7 @@ function getTimeStamp($date){
 }
 
 function getMonth($timestamp){
-	$result = date('F', $timestamp);
-	return $result;
+	return date('F', $timestamp);
 }
 
 $taskDescription = 'Сделайте форму, которая спрашивает дату в формате \'2025-12-31\'. С помощью функций mktime и explode переведите эту дату в формат timestamp. Узнайте месяц (словом) за введенную дату.';

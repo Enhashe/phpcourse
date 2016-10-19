@@ -1,7 +1,6 @@
 <?php
 function getMonthDaysCount($date){
-	$result = date('t', strtotime($date));
-	return $result;
+	return date('t', strtotime($date));
 }
 
 $taskDescription = 'Найдите количество дней в текущем месяце. Скрипт должен работать независимо от месяца, в котором он запущен. Показать решение.';

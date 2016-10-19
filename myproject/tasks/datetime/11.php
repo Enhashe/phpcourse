@@ -1,7 +1,6 @@
 <?php
 function getDay($date){
-	$result = date('d',strtotime($date));
-	return $result;
+	return date('d',strtotime($date));
 }
 
 $taskDescription = 'Найдите номер текущего дня от начала месяца.';

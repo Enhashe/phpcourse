@@ -1,6 +1,6 @@
 <?php
 function getMonthArray(){
-	$month = [
+	return [
 		'1' => 'Январь',
 		'2' => 'Февраль',
 		'3' => 'Март',
@@ -14,7 +14,6 @@ function getMonthArray(){
 		'11' => 'Ноябрь',
 		'12' => 'Декабрь',
 	];
-	return $month;
 }
 
 function getMonth($date){

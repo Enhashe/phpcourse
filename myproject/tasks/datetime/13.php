@@ -1,9 +1,6 @@
 <?php
 function getLeapYear($year){
-	var_dump($year);
-	var_dump(strtotime($year));
 	$isLeap = date('L', mktime(0, 0, 0, 1, 1, $year));
-	var_dump($isLeap);
 	$isLeap = ($isLeap == 1) ? 'високосный' : 'не високосный';
 	return $isLeap;
 }

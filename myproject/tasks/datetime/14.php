@@ -6,8 +6,7 @@ function getTimeStamp($date){
 }
 
 function getWeekDay($timestamp){
-	$result = date('l', $timestamp);
-	return $result;
+	return date('l', $timestamp);
 }
 
 $taskDescription = 'Сделайте форму, которая спрашивает дату в формате \'31.12.2025\'. С помощью функций mktime иexplode переведите эту дату в формат timestamp. Узнайте день недели (словом) за введенную дату.';
