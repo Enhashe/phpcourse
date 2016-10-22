@@ -1,7 +1,10 @@
-CREATE DATABASE publications;
 USE publications;
 GRANT ALL ON publications.* TO 'publications'@'localhost' IDENTIFIED BY 'vagrant';
-CREATE TABLE classics (author VARCHAR(128), title VARCHAR(128), type VARCHAR(16), year CHAR(4)) ENGINE InnoDB;
+CREATE TABLE classics (
+	author VARCHAR(128),
+	title VARCHAR(128),
+	type VARCHAR(16),
+	year CHAR(4)) ENGINE InnoDB;
 ALTER TABLE classics ADD id INT UNSIGNED NOT NULL AUTO_INCREMENT KEY;
 ALTER TABLE classics MODIFY year SMALLINT;
 ALTER TABLE classics CHANGE type category VARCHAR(16);
@@ -55,7 +58,7 @@ CREATE TABLE customers (
  name VARCHAR(128),
  isbn VARCHAR(13),
  PRIMARY KEY (isbn)
-) ENGINE InoDB;
+) ENGINE InnoDB;
 INSERT INTO customers(name,isbn) VALUES
 ('Joe Bloggs','9780099533474'),
 ('Mary Smith','9780582506206'),

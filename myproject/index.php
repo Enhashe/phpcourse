@@ -35,8 +35,8 @@
 <?php require 'view/header.php'; ?>
 <div class="content">
 	<?php require 'view/menu.php'; ?>
-		<div class="workarea">
-			<?php require $pathToView; ?>
-		</div>
+	<div class="workarea">
+		<?php require $pathToView; ?>
 	</div>
+</div>
 <?php require 'view/footer.php'; ?>
