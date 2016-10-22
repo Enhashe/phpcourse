@@ -35,12 +35,12 @@ INSERT INTO product (title, description, price)
 VALUES (
 	'DragonSlash',
 	'This swords guard strongly resembles a pair of bird wings. Its grip is formed like a minotaur holding a topaz.',
-	'73,50');
+	73,50);
 INSERT INTO product (title, description, price)
 VALUES (
 	'Blightpiercer',
 	'This spears blade is pyramid-shaped. Its grip is formed like a knight clutching a skull.',
-	'20');
+	20);
 INSERT INTO product (title, description, price)
 VALUES (
 	'Bracer of Fire Shields',

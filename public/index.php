@@ -1,7 +1,7 @@
 
 <?php 
-	require_once 'lib/index.php';
-	require 'lib/functions.php';
+	require_once '../src/lib/index.php';
+	require '../src/lib/functions.php';
 	$pageCode = 'index';
 	$pageParameters = [];
 	$urlChunks = [];
@@ -15,10 +15,10 @@
 		}
 	}
 
-	$pathToView = __DIR__ . '/view/pages/' . $pageCode . '.php';
+	$pathToView = __DIR__ . '/../src/view/pages/' . $pageCode . '.php';
 	if (!file_exists($pathToView)) {
 		$pageCode = '404';
-		$pathToView = __DIR__ . '/view/pages/' . $pageCode . '.php';
+		$pathToView = __DIR__ . '/../src/view/pages/' . $pageCode . '.php';
 	}
 
 	switch ($pageCode) {
@@ -32,11 +32,11 @@
 			break;
 	}
 ?>
-<?php require 'view/header.php'; ?>
+<?php require '../src/view/header.php'; ?>
 <div class="content">
-	<?php require 'view/menu.php'; ?>
+	<?php require '../src/view/menu.php'; ?>
 	<div class="workarea">
 		<?php require $pathToView; ?>
 	</div>
 </div>
-<?php require 'view/footer.php'; ?>
+<?php require '../src/view/footer.php'; ?>

@@ -51,9 +51,11 @@ CREATE TABLE `product` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(128) COLLATE utf8_bin NOT NULL,
   `description` varchar(256) COLLATE utf8_bin DEFAULT NULL,
+  `cat_id` int(3) unsigned DEFAULT NULL,
   `image` longblob,
   `price` float NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `cat_id` (`cat_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -63,7 +65,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'DragonSlash','This swords guard strongly resembles a pair of bird wings. Its grip is formed like a minotaur holding a topaz.',NULL,73),(2,'Blightpiercer','This spears blade is pyramid-shaped. Its grip is formed like a knight clutching a skull.',NULL,20),(3,'Bracer of Fire Shields','This set of bracers was created as an experiment. It was made to be used by warlords and is inset with tigerseye. The buckles are inset with sapphires. It can conjure up hundreds of lights.',NULL,32),(4,'Charismatic Helm of Ether Touches','It was made to be used by bards and is inset with tigerseye. The buckles are inset with agate. It enhances the owners speed.',NULL,11),(5,'Bears Breast Plate','This breastplate is traditionally used by healers and seems made entirely of stone. It enhances the owners endurance. It requires periodic sacrifices, or it will vanish.',NULL,50),(6,'Greaves of the Haunted Rite','This pair of greaves was created to avert a disaster and is jet black. The buckles are inlaid with copper. It can turn good creatures evil.',NULL,23);
+INSERT INTO `product` VALUES (1,'DragonSlash','This swords guard strongly resembles a pair of bird wings. Its grip is formed like a minotaur holding a topaz.',1,NULL,73.5),(2,'Blightpiercer','This spears blade is pyramid-shaped. Its grip is formed like a knight clutching a skull.',1,NULL,20),(3,'Bracer of Fire Shields','This set of bracers was created as an experiment. It was made to be used by warlords and is inset with tigerseye. The buckles are inset with sapphires. It can conjure up hundreds of lights.',3,NULL,32.6),(4,'Charismatic Helm of Ether Touches','It was made to be used by bards and is inset with tigerseye. The buckles are inset with agate. It enhances the owners speed.',4,NULL,11.99),(5,'Bears Breast Plate','This breastplate is traditionally used by healers and seems made entirely of stone. It enhances the owners endurance. It requires periodic sacrifices, or it will vanish.',2,NULL,50.11),(6,'Greaves of the Haunted Rite','This pair of greaves was created to avert a disaster and is jet black. The buckles are inlaid with copper. It can turn good creatures evil.',5,NULL,23.93);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -76,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-22 10:16:24
+-- Dump completed on 2016-10-22 13:25:24

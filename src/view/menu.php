@@ -142,5 +142,19 @@
           <a href="/tasks/datetime-16" title="16">16</a>
         </li>
       </ul>
+    <li>
+      <b>MySQL</b>
+    </li>
+      <ul>
+        <li>
+          <a href="/tasks/mysql-1" title="1">1</a>
+        </li>
+        <li>
+          <a href="/tasks/mysql-2" title="2">2</a>
+        </li>
+        <li>
+          <a href="/tasks/mysql-2" title="2">2</a>
+        </li>
+      </ul>
   </ul>
 </div>

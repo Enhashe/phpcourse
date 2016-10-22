@@ -21,6 +21,10 @@ function getTaskMap(){
 			'datetime' => array(
 				'title' => 'Datetime',
 				'tasks' => array('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16')
+			),
+			'mysql' => array(
+				'title' => 'MySQL',
+				'tasks' => array('1', '2', '3')
 			)
 		);
 }
@@ -37,7 +41,7 @@ function getTaskTitle($section, $taskNumber){
 function getTask($section, $taskNumber){
 	$taskMap = getTaskMap();
 	$title = getTaskTitle($section, $taskNumber);
-	require __DIR__ .  '/../tasks/' . $section . '/' . $taskNumber . '.php';
+	require __DIR__ .  'tasks/' . $section . '/' . $taskNumber . '.php';
 	return [
 		'title' => $title,
 		'description' => $taskDescription,
