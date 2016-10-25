@@ -24,7 +24,7 @@ function getTaskMap(){
 			),
 			'mysql' => array(
 				'title' => 'MySQL',
-				'tasks' => array('1', '2', '3')
+				'tasks' => array('1', '2', '3', '4', '5')
 			)
 		);
 }

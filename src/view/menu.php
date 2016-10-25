@@ -155,6 +155,12 @@
         <li>
           <a href="/tasks/mysql-3" title="3">3</a>
         </li>
+         <li>
+          <a href="/tasks/mysql-4" title="4">4</a>
+        </li>
+         <li>
+          <a href="/tasks/mysql-5" title="5">5</a>
+        </li>
       </ul>
   </ul>
 </div>
