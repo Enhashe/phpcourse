@@ -41,7 +41,7 @@ function getTaskTitle($section, $taskNumber){
 function getTask($section, $taskNumber){
 	$taskMap = getTaskMap();
 	$title = getTaskTitle($section, $taskNumber);
-	require __DIR__ .  'tasks/' . $section . '/' . $taskNumber . '.php';
+	require __DIR__ .  '../../tasks/' . $section . '/' . $taskNumber . '.php';
 	return [
 		'title' => $title,
 		'description' => $taskDescription,

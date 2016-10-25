@@ -153,7 +153,7 @@
           <a href="/tasks/mysql-2" title="2">2</a>
         </li>
         <li>
-          <a href="/tasks/mysql-2" title="2">2</a>
+          <a href="/tasks/mysql-3" title="3">3</a>
         </li>
       </ul>
   </ul>

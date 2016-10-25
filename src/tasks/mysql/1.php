@@ -1,6 +1,6 @@
 <?php
 
-function dbConnect($dbHostname, $dbUsername, $dbPassword, $database){
+function mysqliDbConnect($dbHostname, $dbUsername, $dbPassword, $database){
 	$mysqli = new mysqli($dbHostname, $dbUsername, $dbPassword, $database);
 	if (mysqli_connect_errno($mysqli)) {
 		echo 'Failed to connect to MySQL:' . mysqli_connect_error();
@@ -25,10 +25,10 @@ $taskDescription = 'Подклю';
 $inputData = '$counter = 10';
 
 $dbHostname = 'localhost';
-$dbUsername = 'market';
-$dbPassword = 'MarketPass';
+$dbUsername = 'root';
+$dbPassword = 'vagrant';//'MarketPass'
 $database = 'market';
 $tablename = 'product';
 
-$mysqli = dbConnect($dbHostname, $dbUsername, $dbPassword, $database);
+$mysqli = mysqliDbConnect($dbHostname, $dbUsername, $dbPassword, $database);
 $result = implode('<br>', printTable($mysqli, $tablename));
