@@ -7,8 +7,12 @@ function arrayOf01($counter = 1) {
 	return $listOf01;
 }
 
-$taskDescription = 'Заполнить массив длины n нулями и единицами, при этом данные значения чередуются, начиная с нуля.';
+function taskFunction(array $arraySize){
+	//here must be check $inputData for consistency
+	$result = implode(',', arrayOf01($arraySize));
+}
+/*$taskDescription = 'Заполнить массив длины n нулями и единицами, при этом данные значения чередуются, начиная с нуля.';
 $inputData = '$arraySize = 30;';
 
-$arraySize = 30;
-$result = implode(',', arrayOf01($arraySize));
+$arraySize = 30;*/
+
