@@ -73,7 +73,7 @@ $keys = array("title","author","print","status");<br>
 $status = 0;
 EOD;
 
-$file = "files/input/functions_task_5_input.txt";
+$file = "public/files/input/functions_task_5_input.txt";
 $delimiter = '|';
 $keys = array("title","author","print","status");
 $status = 0;

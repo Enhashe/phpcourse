@@ -1,17 +1,18 @@
 <?php 
-function insertRow($dbConnection, $tablename, $rowValues){
+/*function insertRow($dbConnection, $tablename, $rowValues){
 	$queryVal = [];
-	$columns = implode(', ', array_keys($rowValues));
+	$columns = '(' . implode(', ', array_keys($rowValues)) . ')';
 	foreach ($rowValues as $key => $value) {
 		$queryVal[$key] = ':' . $key;
 	}
-	$values = implode(', ', array_values($queryVal));
-	$statement = $dbConnection->prepare("INSERT INTO $tablename($columns) VALUES($values)");
+	$values = '(' . implode(', ', array_values($queryVal)) . ')';
+	$statement = $dbConnection->prepare("INSERT INTO $tablename $columns VALUES $values");
+	var_dump($statement);
 	$statement->execute($rowValues);
 	$count = $statement->rowCount();
 	$result = ($count > 0) ? TRUE : FALSE;
 	return $result;
-}
+}*/
 
 $taskDescription = 'Создать функцию, которая будет создавать запись в БД, используя PDO Mysql.';
 $inputData = '$rowValues = array(\'title\' => \'Stormbringer\', \'description\' => \'Great Sword\', \'cat_id\' => 1, \'price\' => 12.50);';
