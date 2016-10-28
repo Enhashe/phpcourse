@@ -1,7 +1,8 @@
 
 <?php 
-	require_once '../src/lib/index.php';
+	require '../src/lib/index.php';
 	require '../src/lib/functions.php';
+	require '../src/classes/Config.php';
 	$pageCode = 'index';
 	$pageParameters = [];
 	$urlChunks = [];
