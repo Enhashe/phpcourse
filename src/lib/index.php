@@ -1,5 +1,8 @@
 <?php
 //require 'lib/functions.php';
+
+require __DIR__ . '/../classes/Task.php';
+
 function getTaskMap(){
 	return $taskStructure = array(
 			'loops' => array(
@@ -40,12 +43,21 @@ function getTaskTitle($section, $taskNumber){
 
 function getTask($section, $taskNumber){
 	$taskMap = getTaskMap();
-	$title = getTaskTitle($section, $taskNumber);
-	require __DIR__ .  '../../tasks/' . $section . '/' . $taskNumber . '.php';
+/*	$title = getTaskTitle($section, $taskNumber);
+	require __DIR__ .  '../../tasks/' . $section . '/' . $taskNumber . '.php';*/
+	$pageTitle = getTaskTitle($section, $taskNumber);
+ 	$description = ''; // @todo get description from tasksMap
+ 	$categoryCode = $section;
+ 	$task = new Task($taskNumber, $categoryCode, $description);
+ 	$inputData = [];
+ 	$result = $task->run($inputData);
 	return [
-		'title' => $title,
+/*		'title' => $title,
 		'description' => $taskDescription,
-		'inputData' => $inputData,
+		'inputData' => $inputData,*/
+		'title' => $pageTitle,
+ 		'description' => $task->getDescription(),
+ 		'inputData' => $inputData,
 		'result' => $result
 	];
 }

@@ -14,6 +14,21 @@ class Task {
 		$this->description = $description;
 	}
 
+	public function getTitle()
+ 	{
+ 		return $this->title;
+ 	}
+ 
+ 	public function getCategory()
+ 	{
+ 		return $this->category;
+ 	}
+ 
+ 	public function getDescription()
+ 	{
+ 		return $this->description;
+ 	}
+
 	public function run($category, $title){
 /*		$count = $inputData['counter'];
 		if (empty($count) || !is_int($count)) {
@@ -24,5 +39,6 @@ class Task {
 			}
 		return $result;*/
 		require __DIR__ . '/../tasks/' . $this->category . '/' . $this->title . '.php';
+		return taskFunction($data);
 	}
 }
